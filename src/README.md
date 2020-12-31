@@ -33,4 +33,22 @@ Para conter a regra de negócio o domínio da aplicação achei que seria adequa
 
 ### Publicando a API
 
-Para que a API funcione corretamente precisamos preparar o ambiente. Fique calmo, não será necessário instalar nada em seu sistema operacional
+Para que a API funcione corretamente precisamos preparar o ambiente. Fique calmo, não será necessário instalar nada em seu sistema operacional apenas iremos criar algumas variaveis de ambiente para que o sistema saiba como acessar sua base de dados.
+
+Para que possamos criar nosso ambiente siga os passos abaixo listados:
+
+* Abra o Windows Explorer
+* Clique com o botão direito em `Meu Computador 'This PC'/Propriedades`
+* Clique em `Configurações Avançadas de Sistema`
+* Clique no botão `Variaveis de Ambiente`
+* Em `Variaveis de Sistema` inluir os seguintes valores
+
+| Variavel Nome       |  Valor              |  Exemplo               |
+| ------------------- | ------------------- | ---------------------- |
+|  API_DATABASEAUTH   | <Authorization>     |  admin                 |
+|  API_DATABASENAME   | <Sua Base de Dados> |  nibo-test             |
+|  API_HOSTINFO       | <IP Para Acesso>    |  localhost             |
+|  API_PORT           | <Database Port>     |  27017                 |
+|  API_USERNAME       | <Database User>     |                        |
+|  API_USERPWS        | <Database Password> |                        |
+|  API_OFX_URL        | <API Domain>        | https://localhost:5001 |
