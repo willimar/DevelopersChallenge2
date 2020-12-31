@@ -20,9 +20,9 @@ Era requisito do processo de avaliação a gravação dos dados após a importa�
 Para possibilitar a execução da aplicação, caso não possua uma instância disponível recomendo a instalação.
 
 ![](../img/site-import-files.png)
-A instalação pode ser feita baixando o serviço do site ![MongoDb Site](https://www.mongodb.com/try/download/community) ou criando um container docker com uma instância.
+A instalação pode ser feita baixando o serviço do site [MongoDb Site](https://www.mongodb.com/try/download/community) ou criando um container docker com uma instância.
 
-Particularmente eu prefiro a criação do Container Docker. Caso necessário o Docker para windows pode ser obtido e instalado a partir do site ![Cocumentação de instalação](https://docs.docker.com/docker-for-windows/install/).
+Particularmente eu prefiro a criação do Container Docker. Caso necessário o Docker para windows pode ser obtido e instalado a partir do site [Cocumentação de instalação](https://docs.docker.com/docker-for-windows/install/).
 
 Para criar o container você pode somente executar o seguinte comando no CMD do windows.
 
