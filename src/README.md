@@ -63,3 +63,44 @@ Como pode ser observado optei por usar:
 * Versionamento: Somente com a finalidade de demonstrar a versão 2.0 não está implementada.
 
 **Considerações Apesar de possuir uma lib com o nome de mediator usei somente a ideia de `Mediator Partner`, mas não usei o pacote MediatR**
+
+## Camada 3 Client Side
+
+Para criar a aplicação a ser usada pelo usuário utilizei `.Net Core MVC` 
+
+### Publicando a camada
+
+Você pode compilar e executar desde que todas as variáveis criadas no tópico anterior tenham sido criadas no ambiente.
+
+A API também deverá estar em execução, para que a aplicação possa se comunicar com os dados e efetuar a importação.
+
+Após a execução teremos como resultado a tela de boas vindas:
+
+![](../img/site-inicio.png)
+
+### Importando arquivos
+
+`Menu Import Files`: Você pode clicar no botão e selecionar os arquivos, ou pode arrastar os arquivos para o local. Como meu objetivo era apresentar conhecimentos de JavaScrip não me preocupei com características visuais. Logo não utilizei nenhum plugin para fazer ficar mais bonito o controle.
+
+![](../img/site-import-files.png)
+
+### Exibindo os dados importados
+
+`Menu Read`: Para visualização dos dados gravados optei por criar um filtro básico e apresentar o resultado em uma grid básica também.
+
+![](../img/site-read-transactions.png)
+
+# Teste
+
+A fim de demonstrar o conhecimento sobre o assunto fiz a criação de somente testes unitários, mas entendo que testes de integração são também de suma importância num projeto.
+
+Para execução de testes de integração poderia ter usado o `Microsoft.AspNetCore.Mvc.Testing`.
+Para execução de testes de tela poeria ter sido usado o `Selenium`.
+
+Para execução dos testes unitários utilizei:
+* xUni
+* FluentAssertions
+* Moq "Mock"
+
+
+**ATENÇÃO** Normalmente eu teria criado arquivos docker para finalizar o processo de CI/CD criando imagens no docker hub e publicando a solução do Heroku afim de criar um ambiente de demonstração, mas foi requisito a não utilização de ambientes externos.
