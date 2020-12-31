@@ -68,7 +68,7 @@ namespace FinancialStatementTest.ReadFileTest
             var result = await this._saveOfxData.Save(new string[] { file });
 
             this._financialStatementServiceMock.Verify(x => x.FileToFinancialStatement(file), Times.Once);
-            this._repositoryMock.Verify(x => x.UpdateData(financialStatement, entity => entity.Equals(financialStatement)), Times.Once);
+            this._repositoryMock.Verify(x => x.UpdateData(financialStatement, entity => entity.BankId == financialStatement.BankId && entity.Account == financialStatement.Account && entity.CurrencyType == financialStatement.CurrencyType), Times.Once);
         }
     }
 }
