@@ -43,12 +43,12 @@ Para que possamos criar nosso ambiente siga os passos abaixo listados:
 * Clique no botão `Variaveis de Ambiente`
 * Em `Variaveis de Sistema` inluir os seguintes valores
 
-| Variavel Nome       |  Valor              |  Exemplo               |
-| ------------------- | ------------------- | ---------------------- |
-|  API_DATABASEAUTH   | Authorization       |  admin                 |
-|  API_DATABASENAME   | Sua Base de Dados   |  nibo-test             |
-|  API_HOSTINFO       | IP Para Acesso      |  localhost             |
-|  API_PORT           | Database Port       |  27017                 |
-|  API_USERNAME       | Database User       |                        |
-|  API_USERPWS        | Database Password   |                        |
-|  API_OFX_URL        | API Domain          | https://localhost:5001 |
+| Variavel Nome       |  Valor              |  Exemplo                                                                           |
+| ------------------- | ------------------- | ---------------------------------------------------------------------------------- |
+|  API_DATABASEAUTH   | Authorization       |  admin                                                                             |
+|  API_DATABASENAME   | Sua Base de Dados   |  nibo-test `Pode ser necessário criar`                                             |
+|  API_HOSTINFO       | IP Para Acesso      |  localhost `no meu caso estava num container local`                                |
+|  API_PORT           | Database Port       |  27017 `Valor padrão`                                                              |
+|  API_USERNAME       | Database User       |  `No meu caso não havia`                                                           |
+|  API_USERPWS        | Database Password   |  `No meu caso não havia`                                                           |
+|  API_OFX_URL        | API Domain          |  https://localhost:5001 `Será usado na aplicação Client Side para encontrar a API` |
