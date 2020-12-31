@@ -45,10 +45,10 @@ Para que possamos criar nosso ambiente siga os passos abaixo listados:
 
 | Variavel Nome       |  Valor              |  Exemplo               |
 | ------------------- | ------------------- | ---------------------- |
-|  API_DATABASEAUTH   | <Authorization>     |  admin                 |
-|  API_DATABASENAME   | <Sua Base de Dados> |  nibo-test             |
-|  API_HOSTINFO       | <IP Para Acesso>    |  localhost             |
-|  API_PORT           | <Database Port>     |  27017                 |
-|  API_USERNAME       | <Database User>     |                        |
-|  API_USERPWS        | <Database Password> |                        |
-|  API_OFX_URL        | <API Domain>        | https://localhost:5001 |
+|  API_DATABASEAUTH   | Authorization       |  admin                 |
+|  API_DATABASENAME   | Sua Base de Dados   |  nibo-test             |
+|  API_HOSTINFO       | IP Para Acesso      |  localhost             |
+|  API_PORT           | Database Port       |  27017                 |
+|  API_USERNAME       | Database User       |                        |
+|  API_USERPWS        | Database Password   |                        |
+|  API_OFX_URL        | API Domain          | https://localhost:5001 |
