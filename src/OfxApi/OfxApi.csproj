@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
+    <Version>1.0.0.1</Version>
+    <Authors>Willimar Augusto Rocha</Authors>
+    <Company>Willimar Rocha LTDA</Company>
+    <Product>CRUD application for knowledge assessment.</Product>
+    <Description>This service can: Read OFX data and save result in database repository. Also can collect data to be show in one grid.</Description>
+    <Copyright>Willimar 2020 ©</Copyright>
+    <PackageProjectUrl>https://github.com/willimar/DevelopersChallenge2</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/willimar/DevelopersChallenge2</RepositoryUrl>
+    <RepositoryType>Frok from Git</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="4.2.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataBaseProvider\DataBaseProvider.csproj" />
+    <ProjectReference Include="..\FinancialStatement.Mediator\FinancialMediator.csproj" />
+  </ItemGroup>
+
+</Project>

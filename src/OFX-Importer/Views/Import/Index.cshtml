@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Import File";
+}
+@{
+
+}
+<div class="container">
+    <div class="row">
+        <label for="files">Upload Invoice (OFX)</label>
+    </div>
+    <div class="row">
+        <span class="btn fileinput-button" style="width:100%">
+            <input type="file" id="files" class="btn btn-primary" style="width:100%" multiple />
+        </span>
+    </div>
+    <div class="col-12  text-right">
+        <button type="button" id="send-files" class="btn btn-secondary">Send files</button>
+    </div>
+    
+</div>
+
+<script>
+    var filesContent = [];
+
+    $("#files").change(function () {
+        var input = document.getElementById('files');
+
+        filesContent = [];
+
+        for (var i = 0; i < input.files.length; i++) {
+            filesContent.push(new FileReader());
+            filesContent[filesContent.length - 1].readAsText(input.files[i]);           
+        }
+    });
+
+    $("#send-files").click(function () {
+        var input = document.getElementById('files');
+
+        if (!input.files[0]) {
+            alert("Please select one o more files before send.");
+            return;
+        }
+
+        var inputs =[]
+        
+        for (var i = 0; i < filesContent.length; i++) {
+            inputs.push(filesContent[i].result);
+        }
+
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("SendData")',
+            data: JSON.stringify(inputs),
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                alert("Data has been added successfully.");
+            },
+            error: function () {
+                alert("Error while inserting data");
+            }
+        });
+    });
+</script>
+
+

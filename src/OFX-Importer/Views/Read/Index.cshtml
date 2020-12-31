@@ -1,0 +1,122 @@
+﻿@model List<int>
+@{
+    ViewData["Title"] = "Read Imported Data";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col col-3">
+            <label>Bank</label>
+            <select class="form-control" id="bank-id">
+                <option value="0">Select a value</option>
+                @foreach (var item in Model)
+                {
+                <option value="@item">@item</option>
+                }
+            </select>
+        </div>
+        <div class="col col-3">
+            <label>Account</label>
+            <select class="form-control" id="account-id">
+                <option value="0">Select a value</option>
+            </select>
+        </div>
+        <div class="col col-2">
+            <label>Currency Type</label>
+            <select class="form-control" id="currency-type">
+                <option value="0">Select a value</option>
+                <option value="1">BRL</option>
+            </select>
+        </div>
+        <div class="col col-4 align-bottom">
+            <label>&nbsp;</label><br />
+            <button type="button" id="get-transactions" class="btn btn-secondary">Load Transactions</button>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="table-responsive">
+    <table class="table table-striped" id="transactions-table">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Value</th>
+                <th>Info</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    $("#teste").click(function () {
+        $('#tableTests tr:last').after('<tr><td>Debit</td><td>22/04/2014</td><td>-280.00</td><td>CXE 801958 SAQUE</td></tr>');
+    });
+
+    $("#bank-id").change(function () {
+        var url = '@ViewData["API_DOMAIN"]/api/v1/GetData/Accounts?bank=' + $("#bank-id").val();
+
+        $("#account-id option").each(function () {
+            $(this).remove();
+        });
+
+        var select = $("#account-id");
+        select.append('<option value="0">Select a value</option>');
+
+        $.ajax({
+            type: "GET",
+            url: url,
+            complete: function (data) {
+                for (var i = 0; i < data.responseJSON.length; i++) {
+                    select.append('<option value="' + data.responseJSON[i] + '">' + data.responseJSON[i] + '</option>');
+                }
+            },
+            error: function (data) {
+                alert("Error to get data.");
+            }
+        });
+    });
+
+    $("#get-transactions").click(function () {
+        var bankId = $("#bank-id").val();
+        var accountId = $("#account-id").val();
+        var currencyType = $("#currency-type").val();
+
+        var url = '@ViewData["API_DOMAIN"]/api/v1/GetData/Transactions?bank=' + bankId + '&account=' + accountId + '&currencyType=' + currencyType;
+
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function (data) {
+                var total = 0.00;
+
+                $('#transactions-table tr[val=1]').remove();
+
+                for (var i = 0; i < data.transactions.length; i++) {
+                    var transaction = data.transactions[i];
+                    var date = new Date(transaction.operationDate);
+                    var type = ['DEBIT', 'CREDIT']
+
+                    total += transaction.value;
+
+                    $('#transactions-table tr:last').after('<tr val=1><td>' + type[transaction.type - 1] + '</td><td>' + date.toLocaleDateString() + '</td><td>' + transaction.value.toFixed(2) + '</td><td>' + transaction.info + '</td></tr>');
+                }
+
+                $('#transactions-table tr:last').after('<tr val=1 class="table-info"><td><b>Total:</b></td><td colspan=3>' + total.toFixed(2) + '</td></tr>');
+            },
+            error: function () {
+                alert("Error to get data.");
+            }
+        });
+    });
+</script>
