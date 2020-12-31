@@ -54,4 +54,4 @@ Para que possamos criar nosso ambiente siga os passos abaixo listados:
 |  API_OFX_URL        | API Domain          |  https://localhost:5001 `Será usado na aplicação Client Side para encontrar a API` |
 
 Agora você pode compilar a aplicação e executar a API.
-![](img/api-image.png)
+![](../img/api-image.png)
