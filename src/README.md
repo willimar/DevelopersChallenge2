@@ -54,4 +54,12 @@ Para que possamos criar nosso ambiente siga os passos abaixo listados:
 |  API_OFX_URL        | API Domain          |  https://localhost:5001 `Será usado na aplicação Client Side para encontrar a API` |
 
 Agora você pode compilar a aplicação e executar a API.
+
 ![](../img/api-image.png)
+
+Como pode ser observado optei por usar:
+
+* Swagger: Ele vai nos ajudar a testar a API e entender como ela deve se comportar.
+* Versionamento: Somente com a finalidade de demonstrar a versão 2.0 não está implementada.
+
+**Considerações Apesar de possuir uma lib com o nome de mediator usei somente a ideia de `Mediator Partner`, mas não usei o pacote MediatR**
